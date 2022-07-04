@@ -1,3 +1,5 @@
+
+
 .App {
   text-align: center;
 }
@@ -15,11 +17,11 @@
 
 .App-header {
   background-color: #282c34;
-  min-height: 100vh;
+  min-height: 400px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content:first baseline;
   font-size: calc(10px + 2vmin);
   color: white;
 }
@@ -35,4 +37,89 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+body{
+  background-color: var(--bs-dark);
+}
+
+h5, h3{
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+h3{
+  color: whitesmoke
+}
+
+.row{
+  width: 100%;
+  margin-left: 0;
+  margin-right: 0;
+  padding-left: 0;
+  padding-right: 0;
+}
+.row .btn{
+  width: 50%;
+}
+
+.mySidebar{
+  padding-left: 0;
+  padding-right: 0;
+  text-align: center;
+}
+
+/* MAP */
+
+.map-img
+{
+  overflow: hidden;
+}
+
+.map-selected {
+  fill: var(--bs-success);
+}
+
+.map-unselected {
+  fill: var(--bs-primary);
+}
+
+.map-selected:hover,
+.map-unselected:hover {
+  cursor: pointer;
+  fill: rgb(127, 255, 127);
+  transform: translate(2.5px, 2.5px);
+  filter: drop-shadow(0 0 5px rgb(127, 255, 127));
+}
+
+/* cards */
+
+.cards
+{
+  margin-top: 30px;
+}
+
+.roundedBorders
+{
+  border-radius: 30px;
+}
+
+.card{
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+/* flags */
+
+.card-img-top {
+  width: 100%;
+  height: 154px;
+  border-bottom: var(--bs-dark) 2.5px solid;
+}
+
+/* favorites */
+
+.trash
+{
+  color: red;
 }
