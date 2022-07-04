@@ -6,12 +6,12 @@ import _ from 'lodash';
 
 type Props =
 { 
-    selectedContinent: string;
     countries: any[];
 }
 
 const Countries:React.FC<Props> = (props):JSX.Element => 
 {
+    console.log("COUNTRIES")
     const orderedCountries = _.orderBy(props.countries, item => item.name.common, ['asc']);
 
     const [inputText, setInputText] = useState("");

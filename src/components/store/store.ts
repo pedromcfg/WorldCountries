@@ -12,15 +12,10 @@ const favoritesSlice = createSlice({
         addFavorites (state: { favorites: string[]; }, action: { payload: string; }) 
         {
             state.favorites.push(action.payload);
-
-            const currentFavButton:HTMLButtonElement = <HTMLButtonElement>document.getElementById((action.payload+"favButton").replace(/\s/g, ''))!;
-            currentFavButton.disabled = true;
         },
         deleteFavorites (state: { favorites: string[]; }, action: { payload: string; }) 
         {
-            state.favorites = state.favorites.filter((country) => { return country !== action.payload })
-            const currentFavButton:HTMLButtonElement = <HTMLButtonElement>document.getElementById((action.payload+"favButton").replace(/\s/g, ''))!;
-            currentFavButton.disabled = false;
+            state.favorites = state.favorites.filter((country) => { return country !== action.payload });
         },
     }
 });

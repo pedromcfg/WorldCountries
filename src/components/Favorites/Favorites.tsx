@@ -2,19 +2,13 @@ import React, { useState } from "react";
 
 import Favorite from "./Favorite";
 
-import { faTrashCan, faHeart } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-
 //REDUX
-import { useSelector, useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
 
 import {
   ProSidebar,
   Menu,
-  MenuItem,
-  SubMenu,
   SidebarHeader,
-  SidebarFooter,
   SidebarContent
 } from "react-pro-sidebar";
 

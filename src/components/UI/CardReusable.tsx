@@ -7,7 +7,7 @@ import { faHeart } from '@fortawesome/free-solid-svg-icons';
 
 import CountryModal from '../CountryList/CountryModal';
 
-import { useDispatch } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { favoriteActions } from '../../components/store/store';
 
 type Props =
@@ -15,6 +15,7 @@ type Props =
 
 const CardReusable:React.FC<Props> = (props) => 
 {
+  const favorites:string[] = useSelector<any, string[]>(state => state.favorites); 
   const dispatch = useDispatch();
 
   const favoriteHandler = () =>
@@ -32,9 +33,7 @@ const CardReusable:React.FC<Props> = (props) =>
                     </ul>
                 <div className="row">
                   <CountryModal country={props.country}/>
-                  <Button variant="danger" 
-                  id={(props.country.name.common+"favButton").replace(/\s/g, '')} 
-                  onClick={favoriteHandler}>
+                  <Button variant="danger" onClick={favoriteHandler} disabled={favorites.includes(props.country.name.common)? true : false}>
                     <FontAwesomeIcon icon={faHeart}/>
                   </Button>
                 </div>
